@@ -1,0 +1,244 @@
+/* line 757, ../sass/partials/_mixins.scss */
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus {
+  clip: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  position: static;
+  width: auto;
+}
+
+/* !============================================= */
+/* ! Variables						  			  */
+/* !============================================= */
+/* !-- Universal ------------------------------------ */
+/* !-- Project ------------------------------------ */
+/* !-- Project ------------------------------------ */
+/* !-- Paths ------------------------------------ */
+/* apply a natural box layout model to all elements */
+/* line 15, ../sass/partials/_base.scss */
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+/* 0, 640px */
+/* 641px, 1024px */
+/* 1025px, 1440px */
+/* 1441px, 1920px */
+/* 1921px */
+/* line 27, ../sass/partials/_base.scss */
+.people-grid-wrap {
+  margin: 40px auto;
+  max-width: 620px;
+  font-family: "MuseoSans", Helvetica, Arial, sans-serif;
+}
+
+/* line 37, ../sass/partials/_base.scss */
+.people-header {
+  margin-bottom: 30px;
+}
+
+/* line 41, ../sass/partials/_base.scss */
+.people-hed {
+  margin: 0 0 5px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid black;
+  font-weight: 400;
+  font-size: 44px;
+  font-family: "FCKaiserCond", Helvetica, Arial, sans-serif;
+  line-height: 100%;
+}
+
+/* line 51, ../sass/partials/_base.scss */
+.people-sponsor {
+  margin-bottom: 15px;
+  text-transform: uppercase;
+  font-size: 15px;
+  font-family: "MuseoSans", Helvetica, Arial, sans-serif;
+}
+
+/* line 58, ../sass/partials/_base.scss */
+.people-intro p {
+  margin-bottom: 10px;
+  color: #66635d;
+  font-size: 15px;
+}
+
+/* line 69, ../sass/partials/_base.scss */
+.people-grid {
+  *zoom: 1;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+/* line 38, ../../../../../../Applications/LiveReload.app/Contents/Resources/SASS.lrplugin/lib/compass/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+.people-grid:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* line 76, ../sass/partials/_base.scss */
+.grid-item {
+  -webkit-transition: opacity 0.2s ease-in-out;
+  -moz-transition: opacity 0.2s ease-in-out;
+  -o-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
+  width: 50%;
+  display: block;
+  float: left;
+  padding: 0 0.625rem 1rem;
+  height: auto;
+  text-align: center;
+  cursor: pointer;
+}
+@media (min-width: 420px) {
+  /* line 76, ../sass/partials/_base.scss */
+  .grid-item {
+    width: 33.33333%;
+  }
+  /* line 87, ../sass/partials/_base.scss */
+  .grid-item:nth-of-type(n) {
+    clear: none;
+  }
+  /* line 90, ../sass/partials/_base.scss */
+  .grid-item:nth-of-type(3n+1) {
+    clear: both;
+  }
+}
+@media (min-width: 600px) {
+  /* line 76, ../sass/partials/_base.scss */
+  .grid-item {
+    width: 25%;
+  }
+  /* line 5, ../sass/partials/_base.scss */
+  .grid-item:nth-of-type(n) {
+    clear: none;
+  }
+  /* line 8, ../sass/partials/_base.scss */
+  .grid-item:nth-of-type(4n+1) {
+    clear: both;
+  }
+}
+
+/* line 99, ../sass/partials/_base.scss */
+.item-unselected {
+  opacity: 0.65;
+}
+
+/* line 103, ../sass/partials/_base.scss */
+.item-active {
+  opacity: 1;
+}
+
+/* line 107, ../sass/partials/_base.scss */
+.grid-image-wrap {
+  overflow: hidden;
+  margin: 0 auto 5px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+/* line 115, ../sass/partials/_base.scss */
+.grid-image {
+  width: 100%;
+}
+
+/* line 123, ../sass/partials/_base.scss */
+.person-name {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+  font-family: "FCKaiserCond", Helvetica, Arial, sans-serif;
+  line-height: 110%;
+}
+
+/* line 132, ../sass/partials/_base.scss */
+.person-job {
+  margin: 0 0 5px;
+  color: #66635d;
+  font-size: 12px;
+  line-height: 120%;
+}
+
+/* line 139, ../sass/partials/_base.scss */
+.person-twitter {
+  margin: 0 0 5px;
+}
+
+/* line 143, ../sass/partials/_base.scss */
+.person-description {
+  display: none;
+}
+
+/* line 148, ../sass/partials/_base.scss */
+.info-name {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+  font-size: 30px;
+  font-family: "FCKaiserCond", Helvetica, Arial, sans-serif;
+}
+
+/* line 157, ../sass/partials/_base.scss */
+.info-job {
+  display: none;
+  margin: 0 0 5px;
+  padding-bottom: 5px;
+  border-bottom: 1px solid black;
+  font-size: 12px;
+}
+
+/* line 165, ../sass/partials/_base.scss */
+.info-twitter {
+  margin: 0 0 5px;
+}
+
+/* line 169, ../sass/partials/_base.scss */
+.info-description {
+  font-size: 15px;
+  color: gray;
+}
+
+/* line 35, ../sass/widget.scss */
+.prose.body * {
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+/* line 39, ../sass/widget.scss */
+.prose.body p, .prose.body p:first-child, .prose.body p:first-line {
+  font-family: inherit !important;
+  color: inherit;
+  font-weight: inherit !important;
+}
+/* line 45, ../sass/widget.scss */
+.prose.body label {
+  margin: 0;
+}
+/* line 50, ../sass/widget.scss */
+.prose.body ol {
+  list-style-type: none;
+  line-height: 100%;
+}
+/* line 55, ../sass/widget.scss */
+.prose.body ul {
+  margin: 0;
+  list-style-type: none !important;
+}
+/* line 60, ../sass/widget.scss */
+.prose.body ol > li {
+  width: auto;
+}
+/* line 64, ../sass/widget.scss */
+.prose.body ol > li:before {
+  position: static;
+}
+/* line 68, ../sass/widget.scss */
+.prose.body ul > li:before {
+  content: none;
+}
