@@ -4,18 +4,35 @@
 // GLOBALS
 // =============================================
 var CONFIG = {
-	"people": $(".grid-item").addClass("item-unselected"),
-	"trueSelect": $(".item-active"),
-	"infoName": $(".info-name"),
-	"infoDesc": $(".info-description")
+	people: $(".pgrid-item"),
+	teasers: $(".pgrid-teaser-wrap"),
+	exitBtns: $(".pgrid-close"),
+	expanders: $(".pgrid-expander"),
+	trueSelect: $(".pgrid-item-active")
 };
+
 
 // HELPERS
 // =============================================
-function switchCopy(target) {
-	CONFIG.infoName.html(target.find(".person-name").html());
-	CONFIG.infoDesc.html(target.find(".person-description").html());
-};
+function resetOthers() {
+	CONFIG.people.removeClass("pgrid-expanded").css("height", "auto");
+	CONFIG.expanders.hide().css("height", 0);
+}
+
+function showCorrect($item) {
+	$item.find(".pgrid-expander").show().css("height", "auto");
+}
+
+function setHeight($item) {
+	var heightNow = $item.find(".pgrid-teaser-wrap").outerHeight(true),
+		expHeight = $item.hasClass("pgrid-expanded") ? $item.find(".pgrid-expander").outerHeight(true) : 0;
+
+	console.log(heightNow, expHeight);
+
+	$item.css("height", heightNow + expHeight);
+}
+
+
 
 
 // HANDLERS
@@ -23,20 +40,44 @@ function switchCopy(target) {
 
 CONFIG.people.on({
 	mouseenter: function() {
-		CONFIG.people.addClass("item-unselected").removeClass("item-active");
-		$(this).addClass("item-active");
+		CONFIG.people.removeClass("pgrid-item-active");
+		$(this).addClass("pgrid-item-active");
 	},
 	mouseleave: function() {
-		CONFIG.people.addClass("item-unselected").removeClass("item-active");
-		CONFIG.trueSelect.addClass("item-active");
-		console.log("leaving");
+		CONFIG.people.removeClass("pgrid-item-active");
+		CONFIG.trueSelect.addClass("pgrid-item-active");
+	},
+	click: function() {
+		CONFIG.trueSelect = $(this);
 	}
 });
 
-CONFIG.people.on("click", function() {
-	var $this = $(this);
+CONFIG.teasers.on("click", function() {
+	var $item = $(this).parent();
 
-	$(this).addClass("item-active");
-	CONFIG.trueSelect = $this;
-	switchCopy($this);
+	if ($item.hasClass("pgrid-expanded")) {
+		resetOthers();
+	} else {
+		resetOthers();
+		$item.addClass("pgrid-expanded");
+		showCorrect($item);
+		setHeight($item);
+	}
+
 });
+
+CONFIG.exitBtns.on("click", function() {
+	resetOthers();
+});
+
+
+
+// WINDOW RESIZE
+// =============================================
+
+var lazyLayout = _.debounce(function() {
+	setHeight(CONFIG.trueSelect);
+}, 100);
+
+$(window).resize(lazyLayout);
+
