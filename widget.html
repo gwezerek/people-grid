@@ -12,7 +12,7 @@
 			<div class="pgrid-teaser-wrap">
 				<div class="pgrid-teaser">
 					<figure class="pgrid-image-wrap">
-						<img class="pgrid-image" src="img/mac.png" alt="slide 1" />
+						<img class="pgrid-image" src="http://www.fastcompany.com/asset_files/-/2014/05/29/mac.png" alt="slide 1" />
 					</figure>
 					<div class="pgrid-copy">
 						<h4 class="p-name">Amber Mac</h4>
@@ -22,7 +22,7 @@
 			</div>
 			<div class="pgrid-expander">
 				<div class="pgrid-expander-inner">
-					<button class="pgrid-close"><i class="fa fa-times pgrid-close-icon"></i></button>
+					<button class="pgrid-close"><i class="icon icon-times pgrid-close-icon"></i></button>
 					<div class="pgrid-details">
 						<h4 class="p-name">Amber Mac</h4>
 						<p class="p-description">Amber Mac is a well-known technology and social media speaker, bestselling author, and the President of Konnekt Digital Engagement. She started her career at Razorfish San Francisco during the dot-come boom and has ever since been on the cutting edge of all things digital.</p>
@@ -34,7 +34,7 @@
 			<div class="pgrid-teaser-wrap">
 				<div class="pgrid-teaser">
 					<figure class="pgrid-image-wrap">
-						<img class="pgrid-image" src="img/finkelstein.jpg" alt="slide 1" />
+						<img class="pgrid-image" src="http://www.fastcompany.com/asset_files/-/2014/05/29/finkelstein.jpg" alt="slide 1" />
 					</figure>
 					<div class="pgrid-copy">
 						<h4 class="p-name">Harley Finkelstein</h4>
@@ -44,7 +44,7 @@
 			</div>
 			<div class="pgrid-expander">
 				<div class="pgrid-expander-inner">
-					<button class="pgrid-close"><i class="fa fa-times pgrid-close-icon"></i></button>
+					<button class="pgrid-close"><i class="icon icon-times pgrid-close-icon"></i></button>
 					<div class="pgrid-details">
 						<h4 class="p-name">Harley Finkelstein</h4>
 						<p class="p-description">Harley Finkelstein is an entrepreneur, lawyer, and the Chief Platform Officer (CPO) at Shopify. He has a background in startups and eCommerce, and started his first company at age 17 while a student at McGill. Harley serves as a mentor and advisor to a number of entrepreneurial organizations and incubators, including Founder Fuel, Extreme Ventures, and Invest Ottawa.</p>
@@ -56,7 +56,7 @@
 			<div class="pgrid-teaser-wrap">
 				<div class="pgrid-teaser">
 					<figure class="pgrid-image-wrap">
-						<img class="pgrid-image" src="img/pak.jpg" alt="slide 1" />
+						<img class="pgrid-image" src="http://www.fastcompany.com/asset_files/-/2014/05/29/pak.jpg" alt="slide 1" />
 					</figure>
 					<div class="pgrid-copy">
 						<h4 class="p-name">Suhyun Pak</h4>
@@ -66,7 +66,7 @@
 			</div>
 			<div class="pgrid-expander">
 				<div class="pgrid-expander-inner">
-					<button class="pgrid-close"><i class="fa fa-times pgrid-close-icon"></i></button>
+					<button class="pgrid-close"><i class="icon icon-times pgrid-close-icon"></i></button>
 					<div class="pgrid-details">
 						<h4 class="p-name">Suhyun Pak</h4>
 						<p class="p-description">Suhyun Pak is the co-founder and Managing Partner of the Hester Street Fair (HSF) brands. Hester Street Fair is a hybrid incubator and launching pad for small, independent businesses and artists specializing in unique handmade goods and artisanal food. Hundreds of vendors rotate over 60 spaces every Saturday and Sunday to create one of the most dynamic outdoor markets in New York City.</p>
@@ -90,14 +90,14 @@
 				teasers: $(".pgrid-teaser-wrap"),
 				exitBtns: $(".pgrid-close"),
 				expanders: $(".pgrid-expander"),
-				trueSelect: $(".pgrid-item-active")
+				trueSelect: undefined
 			};
 
 
 			// HELPERS
 			// =============================================
 			function resetOthers() {
-				CONFIG.people.removeClass("pgrid-expanded pgrid-item-active").addClass("pgrid-item-inactive").css("height", "auto");
+				CONFIG.people.removeClass("pgrid-expanded").addClass("pgrid-item-inactive").css("height", "auto");
 				CONFIG.expanders.hide().css("height", 0);
 				CONFIG.trueSelect = undefined;
 			}
@@ -108,7 +108,7 @@
 
 			function setHeight($item) {
 				var heightNow = $item.find(".pgrid-teaser-wrap").outerHeight(true),
-				expHeight = $item.hasClass("pgrid-expanded") ? $item.find(".pgrid-expander").outerHeight(true) : 0;
+					expHeight = $item.hasClass("pgrid-expanded") ? $item.find(".pgrid-expander").outerHeight(true) : 0;
 
 				$item.css("height", heightNow + expHeight);
 			}
@@ -127,6 +127,8 @@
 					CONFIG.people.addClass("pgrid-item-inactive").removeClass("pgrid-item-active");
 					if (CONFIG.trueSelect) {
 						CONFIG.trueSelect.addClass("pgrid-item-active");
+					} else {
+						CONFIG.people.removeClass("pgrid-item-inactive");
 					}
 				}
 			});
@@ -156,7 +158,9 @@
 			// =============================================
 
 			var lazyLayout = _.debounce(function() {
-				setHeight(CONFIG.trueSelect);
+				if (CONFIG.trueSelect) {
+					setHeight(CONFIG.trueSelect);
+				}
 			}, 100);
 
 			$(window).resize(lazyLayout);

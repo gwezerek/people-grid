@@ -294,7 +294,7 @@ html {
   position: relative;
   margin: 40px auto;
   max-width: 620px;
-  font-family: "MuseoSans", Helvetica, Arial, sans-serif;
+  font-family: "FCZizouSans", Helvetica, Arial, sans-serif;
 }
 
 /* line 23, ../sass/partials/_base.scss */
@@ -315,7 +315,7 @@ html {
 
 /* line 37, ../sass/partials/_base.scss */
 .pgrid-sponsor {
-  margin: 0 0 10px 0;
+  margin: 0 0 15px 0;
   font-weight: 500;
   font-size: 18px;
   font-family: "FCZizouSlab", Georgia, Times, Times New Roman, serif;
@@ -323,9 +323,9 @@ html {
 
 /* line 44, ../sass/partials/_base.scss */
 .pgrid-intro p {
-  margin-bottom: 10px;
+  margin: 0 0 10px;
   color: #66635d;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 140%;
 }
 
@@ -483,8 +483,8 @@ html {
 @media (min-width: 420px) {
   /* line 145, ../sass/partials/_base.scss */
   .pgrid-close {
-    top: 29px;
-    right: 30px;
+    top: 24px;
+    right: 25px;
   }
 }
 
@@ -516,7 +516,7 @@ html {
 @media (min-width: 420px) {
   /* line 186, ../sass/partials/_base.scss */
   .pgrid-expander-inner {
-    padding: 30px;
+    padding: 25px;
   }
 }
 
@@ -548,7 +548,7 @@ html {
   margin: 0 0 5px;
   text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
   font-size: 12px;
-  font-family: "MuseoSans", Helvetica, Arial, sans-serif;
+  font-family: "FCZizouSans", Helvetica, Arial, sans-serif;
   line-height: 120%;
 }
 /* line 227, ../sass/partials/_base.scss */
@@ -575,13 +575,13 @@ html {
 .p-description {
   margin: 0;
   color: #66635d;
-  font-size: 14px;
+  font-size: 15px;
   line-height: 140%;
 }
 @media (min-width: 420px) {
   /* line 242, ../sass/partials/_base.scss */
   .p-description {
-    font-size: 15px;
+    font-size: 16px;
   }
 }
 

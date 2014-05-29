@@ -20,6 +20,18 @@
 
 
 
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+
+// Erasing local convenience styling
+
+// ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
+
+
+.pgrid-wrap {
+	margin: 0;
+	max-width: none;
+}
+
 
 
 // ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~
@@ -37,9 +49,9 @@
 	}
 
 	p, p:first-child, p:first-line {
-		font-family: inherit !important;
 		color: inherit;
 		font-weight: inherit !important;
+		font-family: inherit !important;
 	}
 
 	label {
@@ -65,6 +77,10 @@
 		position: static;
 	}
 
+	ul>li {
+		position: static;
+	}
+
 	ul>li:before {
 		content: none;
 	}	
@@ -72,6 +88,84 @@
 
 	// Graphic-specific resets
 
+	// TYPE
+	.pgrid-hed {
+		margin: 0 0 3px !important;
+		letter-spacing: 0;
+		font-size: 44px !important;
+	}
+
+	.pgrid-sponsor {
+		margin: 0 0 15px 0;
+		text-transform: none;
+		font-weight: 500 !important;
+		font-size: 18px;
+		font-family: $slab;
+	}
+
+	.pgrid-intro p {
+		color: $dark-gray !important;
+		font-size: 16px;
+		font-family: $zsans !important;
+		&:after {
+			content: none !important;
+		}
+	}
+
+	.p-description {
+		color: $dark-gray;
+		font-weight: 300 !important;
+		font-size: 16px;
+		margin: 0;
+		line-height: 140%;
+	}
+
+	.p-name {
+		margin: 0 0 1px 0 !important;
+		text-transform: none;
+		font-weight: 500 !important;
+		font-size: 18px !important;
+		font-family: $slab;
+		line-height: 100% !important;
+	}
+
+	.pgrid-details > .p-name {
+		margin-bottom: 10px !important;
+	}
+
+	.p-job {
+		margin: 0 0 5px;
+		text-transform: none;
+		font-size: 12px !important;
+		font-family: $zsans;
+		line-height: 120% !important;
+		a {
+			border-bottom: none;
+			color: $med-gray;
+			text-decoration: none;
+		}
+		a:hover {
+			color: $txt-black;
+		}
+	}
+
+	.pgrid-close-icon {
+		font-size: 10px;
+		margin: 0;
+	}
+
+	// LAYOUT
+	.pgrid {
+		background-image: url("http://www.fastcompany.com/asset_files/-/2014/05/29/stripes2.png");
+	}
+
+	.pgrid-item {
+		padding: 0 5px 20px !important;
+	}
+
+	.pgrid-image-wrap {
+		margin: 0 auto 5px !important;
+	}
 }
 
 // Graphic-specific resets

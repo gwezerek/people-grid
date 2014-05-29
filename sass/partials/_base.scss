@@ -13,7 +13,7 @@ html {
 	position: relative;
 	margin: 40px auto;
 	max-width: 620px;
-	font-family: $sans;
+	font-family: $zsans;
 }
 
 
@@ -35,16 +35,16 @@ html {
 }
 
 .pgrid-sponsor {
-	margin: 0 0 10px 0;
+	margin: 0 0 15px 0;
 	font-weight: 500;
 	font-size: 18px;
 	font-family: $slab;
 }
 
 .pgrid-intro p {
-	margin-bottom: 10px;
+	margin: 0 0 10px;
 	color: $dark-gray;
-	font-size: 15px;
+	font-size: 16px;
 	line-height: 140%;
 }
 
@@ -163,8 +163,8 @@ html {
 		color: $txt-black;
 	}
 	@media (min-width: $small) {
-		top: 29px;
-		right: 30px;
+		top: 24px;
+		right: 25px;
 	}
 }
 
@@ -188,7 +188,7 @@ html {
 	height: 100%;
 	background-color: white;
 	@media (min-width: $small) {
-		padding: 30px;
+		padding: 25px;
 	}
 }
 
@@ -222,7 +222,7 @@ html {
 	margin: 0 0 5px;
 	text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
 	font-size: 12px;
-	font-family: $sans;
+	font-family: $zsans;
 	line-height: 120%;
 	a {
 		@include trans(0.2s, color, ease-in-out);
@@ -242,10 +242,10 @@ html {
 .p-description {
 	margin: 0;
 	color: $dark-gray;
-	font-size: 14px;
+	font-size: 15px;
 	line-height: 140%;
 	@media (min-width: $small) {
-		font-size: 15px;
+		font-size: 16px;
 	}
 }
 

@@ -35,7 +35,7 @@ html {
   position: relative;
   margin: 40px auto;
   max-width: 620px;
-  font-family: "MuseoSans", Helvetica, Arial, sans-serif;
+  font-family: "FCZizouSans", Helvetica, Arial, sans-serif;
 }
 
 /* line 23, ../sass/partials/_base.scss */
@@ -56,7 +56,7 @@ html {
 
 /* line 37, ../sass/partials/_base.scss */
 .pgrid-sponsor {
-  margin: 0 0 10px 0;
+  margin: 0 0 15px 0;
   font-weight: 500;
   font-size: 18px;
   font-family: "FCZizouSlab", Georgia, Times, Times New Roman, serif;
@@ -64,9 +64,9 @@ html {
 
 /* line 44, ../sass/partials/_base.scss */
 .pgrid-intro p {
-  margin-bottom: 10px;
+  margin: 0 0 10px;
   color: #66635d;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 140%;
 }
 
@@ -224,8 +224,8 @@ html {
 @media (min-width: 420px) {
   /* line 145, ../sass/partials/_base.scss */
   .pgrid-close {
-    top: 29px;
-    right: 30px;
+    top: 24px;
+    right: 25px;
   }
 }
 
@@ -257,7 +257,7 @@ html {
 @media (min-width: 420px) {
   /* line 186, ../sass/partials/_base.scss */
   .pgrid-expander-inner {
-    padding: 30px;
+    padding: 25px;
   }
 }
 
@@ -289,7 +289,7 @@ html {
   margin: 0 0 5px;
   text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
   font-size: 12px;
-  font-family: "MuseoSans", Helvetica, Arial, sans-serif;
+  font-family: "FCZizouSans", Helvetica, Arial, sans-serif;
   line-height: 120%;
 }
 /* line 227, ../sass/partials/_base.scss */
@@ -316,49 +316,139 @@ html {
 .p-description {
   margin: 0;
   color: #66635d;
-  font-size: 14px;
+  font-size: 15px;
   line-height: 140%;
 }
 @media (min-width: 420px) {
   /* line 242, ../sass/partials/_base.scss */
   .p-description {
-    font-size: 15px;
+    font-size: 16px;
   }
 }
 
-/* line 35, ../sass/widget.scss */
+/* line 30, ../sass/widget.scss */
+.pgrid-wrap {
+  margin: 0;
+  max-width: none;
+}
+
+/* line 47, ../sass/widget.scss */
 .prose.body * {
   -webkit-font-smoothing: subpixel-antialiased;
 }
-/* line 39, ../sass/widget.scss */
+/* line 51, ../sass/widget.scss */
 .prose.body p, .prose.body p:first-child, .prose.body p:first-line {
-  font-family: inherit !important;
   color: inherit;
   font-weight: inherit !important;
+  font-family: inherit !important;
 }
-/* line 45, ../sass/widget.scss */
+/* line 57, ../sass/widget.scss */
 .prose.body label {
   margin: 0;
 }
-/* line 50, ../sass/widget.scss */
+/* line 62, ../sass/widget.scss */
 .prose.body ol {
   list-style-type: none;
   line-height: 100%;
 }
-/* line 55, ../sass/widget.scss */
+/* line 67, ../sass/widget.scss */
 .prose.body ul {
   margin: 0;
   list-style-type: none !important;
 }
-/* line 60, ../sass/widget.scss */
+/* line 72, ../sass/widget.scss */
 .prose.body ol > li {
   width: auto;
 }
-/* line 64, ../sass/widget.scss */
+/* line 76, ../sass/widget.scss */
 .prose.body ol > li:before {
   position: static;
 }
-/* line 68, ../sass/widget.scss */
+/* line 80, ../sass/widget.scss */
+.prose.body ul > li {
+  position: static;
+}
+/* line 84, ../sass/widget.scss */
 .prose.body ul > li:before {
   content: none;
+}
+/* line 92, ../sass/widget.scss */
+.prose.body .pgrid-hed {
+  margin: 0 0 3px !important;
+  letter-spacing: 0;
+  font-size: 44px !important;
+}
+/* line 98, ../sass/widget.scss */
+.prose.body .pgrid-sponsor {
+  margin: 0 0 15px 0;
+  text-transform: none;
+  font-weight: 500 !important;
+  font-size: 18px;
+  font-family: "FCZizouSlab", Georgia, Times, Times New Roman, serif;
+}
+/* line 106, ../sass/widget.scss */
+.prose.body .pgrid-intro p {
+  color: #66635d !important;
+  font-size: 16px;
+  font-family: "FCZizouSans", Helvetica, Arial, sans-serif !important;
+}
+/* line 110, ../sass/widget.scss */
+.prose.body .pgrid-intro p:after {
+  content: none !important;
+}
+/* line 115, ../sass/widget.scss */
+.prose.body .p-description {
+  color: #66635d;
+  font-weight: 300 !important;
+  font-size: 16px;
+  margin: 0;
+  line-height: 140%;
+}
+/* line 123, ../sass/widget.scss */
+.prose.body .p-name {
+  margin: 0 0 1px 0 !important;
+  text-transform: none;
+  font-weight: 500 !important;
+  font-size: 18px !important;
+  font-family: "FCZizouSlab", Georgia, Times, Times New Roman, serif;
+  line-height: 100% !important;
+}
+/* line 132, ../sass/widget.scss */
+.prose.body .pgrid-details > .p-name {
+  margin-bottom: 10px !important;
+}
+/* line 136, ../sass/widget.scss */
+.prose.body .p-job {
+  margin: 0 0 5px;
+  text-transform: none;
+  font-size: 12px !important;
+  font-family: "FCZizouSans", Helvetica, Arial, sans-serif;
+  line-height: 120% !important;
+}
+/* line 142, ../sass/widget.scss */
+.prose.body .p-job a {
+  border-bottom: none;
+  color: #99948a;
+  text-decoration: none;
+}
+/* line 147, ../sass/widget.scss */
+.prose.body .p-job a:hover {
+  color: #33312e;
+}
+/* line 152, ../sass/widget.scss */
+.prose.body .pgrid-close-icon {
+  font-size: 10px;
+  margin: 0;
+}
+/* line 158, ../sass/widget.scss */
+.prose.body .pgrid {
+  background-image: url("http://www.fastcompany.com/asset_files/-/2014/05/29/stripes2.png");
+}
+/* line 162, ../sass/widget.scss */
+.prose.body .pgrid-item {
+  padding: 0 5px 20px !important;
+}
+/* line 166, ../sass/widget.scss */
+.prose.body .pgrid-image-wrap {
+  margin: 0 auto 5px !important;
 }
