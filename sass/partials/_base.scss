@@ -4,8 +4,13 @@
 	-moz-box-sizing: border-box; box-sizing: border-box;
 }
 
+html {
+	overflow-y: scroll;
+}
+
 
 .pgrid-wrap {
+	position: relative;
 	margin: 40px auto;
 	max-width: 620px;
 	font-family: $sans;
@@ -40,6 +45,7 @@
 	margin-bottom: 10px;
 	color: $dark-gray;
 	font-size: 15px;
+	line-height: 140%;
 }
 
 
@@ -85,6 +91,7 @@
 
 .pgrid-image {
 	@include transition(0.2s all ease-in-out, 0.2s opacity ease-in-out);
+	max-width: 100%;
 	-webkit-perspective: 1000;
 	-webkit-backface-visibility: hidden;
 }
@@ -219,6 +226,8 @@
 	line-height: 120%;
 	a {
 		@include trans(0.2s, color, ease-in-out);
+		font-weight: 500;
+		text-decoration: none;
 		color: $med-gray;
 	}
 	a:hover {
@@ -234,6 +243,7 @@
 	margin: 0;
 	color: $dark-gray;
 	font-size: 14px;
+	line-height: 140%;
 	@media (min-width: $small) {
 		font-size: 15px;
 	}

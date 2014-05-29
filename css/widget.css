@@ -25,19 +25,25 @@
   box-sizing: border-box;
 }
 
-/* line 8, ../sass/partials/_base.scss */
+/* line 7, ../sass/partials/_base.scss */
+html {
+  overflow-y: scroll;
+}
+
+/* line 12, ../sass/partials/_base.scss */
 .pgrid-wrap {
+  position: relative;
   margin: 40px auto;
   max-width: 620px;
   font-family: "MuseoSans", Helvetica, Arial, sans-serif;
 }
 
-/* line 18, ../sass/partials/_base.scss */
+/* line 23, ../sass/partials/_base.scss */
 .pgrid-header {
   margin-bottom: 25px;
 }
 
-/* line 22, ../sass/partials/_base.scss */
+/* line 27, ../sass/partials/_base.scss */
 .pgrid-hed {
   margin: 0 0 3px;
   padding-bottom: 5px;
@@ -48,7 +54,7 @@
   line-height: 100%;
 }
 
-/* line 32, ../sass/partials/_base.scss */
+/* line 37, ../sass/partials/_base.scss */
 .pgrid-sponsor {
   margin: 0 0 10px 0;
   font-weight: 500;
@@ -56,14 +62,15 @@
   font-family: "FCZizouSlab", Georgia, Times, Times New Roman, serif;
 }
 
-/* line 39, ../sass/partials/_base.scss */
+/* line 44, ../sass/partials/_base.scss */
 .pgrid-intro p {
   margin-bottom: 10px;
   color: #66635d;
   font-size: 15px;
+  line-height: 140%;
 }
 
-/* line 51, ../sass/partials/_base.scss */
+/* line 57, ../sass/partials/_base.scss */
 .pgrid {
   *zoom: 1;
   margin: 0 auto;
@@ -80,7 +87,7 @@
   clear: both;
 }
 
-/* line 61, ../sass/partials/_base.scss */
+/* line 67, ../sass/partials/_base.scss */
 .pgrid-item {
   display: inline-block;
   padding: 0 5px 20px;
@@ -89,14 +96,14 @@
   text-align: center;
 }
 
-/* line 69, ../sass/partials/_base.scss */
+/* line 75, ../sass/partials/_base.scss */
 .pgrid-teaser-wrap {
   position: relative;
   width: 150px;
   cursor: pointer;
 }
 
-/* line 75, ../sass/partials/_base.scss */
+/* line 81, ../sass/partials/_base.scss */
 .pgrid-image-wrap {
   overflow: hidden;
   margin: 0 auto 5px;
@@ -108,17 +115,18 @@
   -webkit-backface-visibility: hidden;
 }
 
-/* line 86, ../sass/partials/_base.scss */
+/* line 92, ../sass/partials/_base.scss */
 .pgrid-image {
   -webkit-transition: 0.2s all ease-in-out, 0.2s opacity ease-in-out;
   -moz-transition: 0.2s all ease-in-out, 0.2s opacity ease-in-out;
   -o-transition: 0.2s all ease-in-out, 0.2s opacity ease-in-out;
   transition: 0.2s all ease-in-out, 0.2s opacity ease-in-out;
+  max-width: 100%;
   -webkit-perspective: 1000;
   -webkit-backface-visibility: hidden;
 }
 
-/* line 92, ../sass/partials/_base.scss */
+/* line 99, ../sass/partials/_base.scss */
 .pgrid-item-inactive .pgrid-image {
   opacity: .65;
   -webkit-filter: grayscale(70%);
@@ -128,7 +136,7 @@
   -o-filter: grayscale(70%);
 }
 
-/* line 101, ../sass/partials/_base.scss */
+/* line 108, ../sass/partials/_base.scss */
 .pgrid-item-active .pgrid-image {
   opacity: 1;
   -webkit-filter: grayscale(0%);
@@ -138,7 +146,7 @@
   -o-filter: grayscale(0%);
 }
 
-/* line 111, ../sass/partials/_base.scss */
+/* line 118, ../sass/partials/_base.scss */
 .pgrid-expanded > .pgrid-teaser-wrap:after,
 .pgrid-expanded > .pgrid-teaser-wrap:before {
   position: absolute;
@@ -152,26 +160,26 @@
   pointer-events: none;
 }
 
-/* line 123, ../sass/partials/_base.scss */
+/* line 130, ../sass/partials/_base.scss */
 .pgrid-expanded > .pgrid-teaser-wrap:after {
   bottom: -30px;
   z-index: 1;
   border-color: transparent transparent white transparent;
 }
 
-/* line 129, ../sass/partials/_base.scss */
+/* line 136, ../sass/partials/_base.scss */
 .pgrid-expanded > .pgrid-teaser-wrap:before {
   bottom: -27px;
   border-color: transparent transparent black transparent;
 }
 
-/* line 134, ../sass/partials/_base.scss */
+/* line 141, ../sass/partials/_base.scss */
 ​
 .pgrid-image {
   width: 100%;
 }
 
-/* line 138, ../sass/partials/_base.scss */
+/* line 145, ../sass/partials/_base.scss */
 .pgrid-close {
   border: 0;
   background-color: transparent;
@@ -207,21 +215,21 @@
 .pgrid-close:focus {
   outline: 0;
 }
-/* line 153, ../sass/partials/_base.scss */
+/* line 160, ../sass/partials/_base.scss */
 .pgrid-close:hover {
   border-color: #33312e;
   background-color: white;
   color: #33312e;
 }
 @media (min-width: 420px) {
-  /* line 138, ../sass/partials/_base.scss */
+  /* line 145, ../sass/partials/_base.scss */
   .pgrid-close {
     top: 29px;
     right: 30px;
   }
 }
 
-/* line 164, ../sass/partials/_base.scss */
+/* line 171, ../sass/partials/_base.scss */
 .pgrid-expander {
   position: absolute;
   top: auto;
@@ -234,26 +242,26 @@
   text-align: left;
 }
 @media (min-width: 420px) {
-  /* line 164, ../sass/partials/_base.scss */
+  /* line 171, ../sass/partials/_base.scss */
   .pgrid-expander {
     margin: 22px 20px;
   }
 }
 
-/* line 179, ../sass/partials/_base.scss */
+/* line 186, ../sass/partials/_base.scss */
 .pgrid-expander-inner {
   padding: 20px;
   height: 100%;
   background-color: white;
 }
 @media (min-width: 420px) {
-  /* line 179, ../sass/partials/_base.scss */
+  /* line 186, ../sass/partials/_base.scss */
   .pgrid-expander-inner {
     padding: 30px;
   }
 }
 
-/* line 188, ../sass/partials/_base.scss */
+/* line 195, ../sass/partials/_base.scss */
 .pgrid-details {
   position: relative;
   overflow: hidden;
@@ -261,12 +269,12 @@
   height: 100%;
 }
 
-/* line 195, ../sass/partials/_base.scss */
+/* line 202, ../sass/partials/_base.scss */
 .pgrid-details > .p-name {
   margin-bottom: 10px;
 }
 
-/* line 205, ../sass/partials/_base.scss */
+/* line 212, ../sass/partials/_base.scss */
 .p-name {
   margin: 0 0 1px 0;
   text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
@@ -276,7 +284,7 @@
   line-height: 100%;
 }
 
-/* line 214, ../sass/partials/_base.scss */
+/* line 221, ../sass/partials/_base.scss */
 .p-job {
   margin: 0 0 5px;
   text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 white;
@@ -284,32 +292,35 @@
   font-family: "MuseoSans", Helvetica, Arial, sans-serif;
   line-height: 120%;
 }
-/* line 220, ../sass/partials/_base.scss */
+/* line 227, ../sass/partials/_base.scss */
 .p-job a {
   -webkit-transition: color 0.2s ease-in-out;
   -moz-transition: color 0.2s ease-in-out;
   -o-transition: color 0.2s ease-in-out;
   transition: color 0.2s ease-in-out;
+  font-weight: 500;
+  text-decoration: none;
   color: #99948a;
 }
-/* line 224, ../sass/partials/_base.scss */
+/* line 233, ../sass/partials/_base.scss */
 .p-job a:hover {
   color: #33312e;
 }
 
-/* line 229, ../sass/partials/_base.scss */
+/* line 238, ../sass/partials/_base.scss */
 .p-twitter {
   margin: 0 0 5px;
 }
 
-/* line 233, ../sass/partials/_base.scss */
+/* line 242, ../sass/partials/_base.scss */
 .p-description {
   margin: 0;
   color: #66635d;
   font-size: 14px;
+  line-height: 140%;
 }
 @media (min-width: 420px) {
-  /* line 233, ../sass/partials/_base.scss */
+  /* line 242, ../sass/partials/_base.scss */
   .p-description {
     font-size: 15px;
   }
