@@ -8,14 +8,14 @@ var CONFIG = {
 	teasers: $(".pgrid-teaser-wrap"),
 	exitBtns: $(".pgrid-close"),
 	expanders: $(".pgrid-expander"),
-	trueSelect: $(".pgrid-item-active")
+	trueSelect: undefined
 };
 
 
 // HELPERS
 // =============================================
 function resetOthers() {
-	CONFIG.people.removeClass("pgrid-expanded pgrid-item-active").addClass("pgrid-item-inactive").css("height", "auto");
+	CONFIG.people.removeClass("pgrid-expanded").addClass("pgrid-item-inactive").css("height", "auto");
 	CONFIG.expanders.hide().css("height", 0);
 	CONFIG.trueSelect = undefined;
 }
@@ -45,6 +45,8 @@ CONFIG.people.on({
 		CONFIG.people.addClass("pgrid-item-inactive").removeClass("pgrid-item-active");
 		if (CONFIG.trueSelect) {
 			CONFIG.trueSelect.addClass("pgrid-item-active");
+		} else {
+			CONFIG.people.removeClass("pgrid-item-inactive");
 		}
 	}
 });
@@ -74,7 +76,9 @@ CONFIG.exitBtns.on("click", function() {
 // =============================================
 
 var lazyLayout = _.debounce(function() {
-	setHeight(CONFIG.trueSelect);
+	if (CONFIG.trueSelect) {
+		setHeight(CONFIG.trueSelect);
+	}
 }, 100);
 
 $(window).resize(lazyLayout);
