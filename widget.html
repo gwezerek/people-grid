@@ -1,8 +1,172 @@
-<div class="viz-article" id="viz-pym">
-	<script>
-		var graphicURL = "http://www.guswezerek.com/projects/quizup/";
-		$.getScript("https://cdn.rawgit.com/nprapps/pym.js/master/src/pym.js", function(){
-		    pym.Parent('viz-pym', graphicURL, {});
-		 });
+  <article class="pgrid-wrap">
+    <header class="pgrid-header">
+      <h2 class="pgrid-hed">Meet Our Panel of Small&nbsp;Business Experts</h2>
+      <h3 class="pgrid-sponsor">Sponsored content in partnership with Mercedes Benz</h3>
+      <div class="pgrid-intro">
+        <p>This year, Fast Company and Mercedes-Benz have invited three small business advocates, experts, and entrepreneurs to provide insights and commentary on the Drive Your Business Forward Reader's Choice Award nominees.</p>
+        <p>Check back starting July 7th to see each award nominee introduced and to hear what our panel of experts has to say!</p>
+      </div>
+    </header>
+    <ul class="pgrid">
+      <li class="pgrid-item">
+        <div class="pgrid-teaser-wrap">
+          <div class="pgrid-teaser">
+            <figure class="pgrid-image-wrap">
+              <img class="pgrid-image" src="img/mac.png" alt="slide 1" />
+            </figure>
+            <div class="pgrid-copy">
+              <h4 class="p-name">Amber Mac</h4>
+              <h5 class="p-job"><a href="http://www.konnektnow.com">Konnekt Digital Entertainment</a></h5>
+            </div>
+          </div>
+        </div>
+        <div class="pgrid-expander">
+          <div class="pgrid-expander-inner">
+            <button class="pgrid-close"><i class="fa fa-times pgrid-close-icon"></i></button>
+            <div class="pgrid-details">
+              <h4 class="p-name">Amber Mac</h4>
+              <p class="p-description">Amber Mac is a well-known technology and social media speaker, bestselling author, and the President of Konnekt Digital Engagement. She started her career at Razorfish San Francisco during the dot-come boom and has ever since been on the cutting edge of all things digital.</p>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="pgrid-item">
+        <div class="pgrid-teaser-wrap">
+          <div class="pgrid-teaser">
+            <figure class="pgrid-image-wrap">
+              <img class="pgrid-image" src="img/finkelstein.jpg" alt="slide 1" />
+            </figure>
+            <div class="pgrid-copy">
+              <h4 class="p-name">Harley Finkelstein</h4>
+              <h5 class="p-job"><a href="http://www.shopify.com">Shopify</a></h5>
+            </div>
+          </div>
+        </div>
+        <div class="pgrid-expander">
+          <div class="pgrid-expander-inner">
+            <button class="pgrid-close"><i class="fa fa-times pgrid-close-icon"></i></button>
+            <div class="pgrid-details">
+              <h4 class="p-name">Harley Finkelstein</h4>
+              <p class="p-description">Harley Finkelstein is an entrepreneur, lawyer, and the Chief Platform Officer (CPO) at Shopify. He has a background in startups and eCommerce, and started his first company at age 17 while a student at McGill. Harley serves as a mentor and advisor to a number of entrepreneurial organizations and incubators, including Founder Fuel, Extreme Ventures, and Invest Ottawa.</p>
+            </div>
+          </div>
+        </div>
+      </li>
+      <li class="pgrid-item">
+        <div class="pgrid-teaser-wrap">
+          <div class="pgrid-teaser">
+            <figure class="pgrid-image-wrap">
+              <img class="pgrid-image" src="img/pak.jpg" alt="slide 1" />
+            </figure>
+            <div class="pgrid-copy">
+              <h4 class="p-name">Suhyun Pak</h4>
+              <h5 class="p-job"><a href="http://www.hesterstreetfair.com">Hester Street Fair</a></h5>
+            </div>
+          </div>
+        </div>
+        <div class="pgrid-expander">
+          <div class="pgrid-expander-inner">
+            <button class="pgrid-close"><i class="fa fa-times pgrid-close-icon"></i></button>
+            <div class="pgrid-details">
+              <h4 class="p-name">Suhyun Pak</h4>
+              <p class="p-description">Suhyun Pak is the co-founder and Managing Partner of the Hester Street Fair (HSF) brands. Hester Street Fair is a hybrid incubator and launching pad for small, independent businesses and artists specializing in unique handmade goods and artisanal food. Hundreds of vendors rotate over 60 spaces every Saturday and Sunday to create one of the most dynamic outdoor markets in New York City.</p>
+            </div>
+          </div>
+        </div>
+      </li>
+    </ul>
+
+	<script type="text/javascript">
+
+		window.FC = window.FC || {};
+	    window.FC.inlineFunctions = window.FC.inlineFunctions || {};
+
+	    window.FC.inlineFunctions.graphicScript = function() {
+
+			// GLOBALS
+			// =============================================
+			var CONFIG = {
+				people: $(".pgrid-item"),
+				teasers: $(".pgrid-teaser-wrap"),
+				exitBtns: $(".pgrid-close"),
+				expanders: $(".pgrid-expander"),
+				trueSelect: $(".pgrid-item-active")
+			};
+
+
+			// HELPERS
+			// =============================================
+			function resetOthers() {
+				CONFIG.people.removeClass("pgrid-expanded pgrid-item-active").addClass("pgrid-item-inactive").css("height", "auto");
+				CONFIG.expanders.hide().css("height", 0);
+				CONFIG.trueSelect = undefined;
+			}
+
+			function showCorrect($item) {
+				$item.find(".pgrid-expander").show().css("height", "auto");
+			}
+
+			function setHeight($item) {
+				var heightNow = $item.find(".pgrid-teaser-wrap").outerHeight(true),
+					expHeight = $item.hasClass("pgrid-expanded") ? $item.find(".pgrid-expander").outerHeight(true) : 0;
+
+				$item.css("height", heightNow + expHeight);
+			}
+
+
+
+			// HANDLERS
+			// =============================================
+
+			CONFIG.people.on({
+				mouseenter: function() {
+					CONFIG.people.addClass("pgrid-item-inactive").removeClass("pgrid-item-active");
+					$(this).addClass("pgrid-item-active");
+				},
+				mouseleave: function() {
+					CONFIG.people.addClass("pgrid-item-inactive").removeClass("pgrid-item-active");
+					if (CONFIG.trueSelect) {
+						CONFIG.trueSelect.addClass("pgrid-item-active");
+					}
+				}
+			});
+
+			CONFIG.teasers.on("click", function() {
+				var $item = $(this).parent();
+
+				if ($item.hasClass("pgrid-expanded")) {
+					resetOthers();
+				} else {
+					resetOthers();
+					CONFIG.trueSelect = $item;
+					$item.addClass("pgrid-expanded").addClass("pgrid-item-active");
+					showCorrect($item);
+					setHeight($item);
+				}
+
+			});
+
+			CONFIG.exitBtns.on("click", function() {
+				resetOthers();
+			});
+
+
+
+			// WINDOW RESIZE
+			// =============================================
+
+			var lazyLayout = _.debounce(function() {
+				setHeight(CONFIG.trueSelect);
+			}, 100);
+
+			$(window).resize(lazyLayout);
+
+		};
+
+		require([], function() {
+	      window.FC.inlineFunctions.graphicScript();
+	    });
+
 	</script>
-</div>
+
+</article>

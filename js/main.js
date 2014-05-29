@@ -15,8 +15,9 @@ var CONFIG = {
 // HELPERS
 // =============================================
 function resetOthers() {
-	CONFIG.people.removeClass("pgrid-expanded").css("height", "auto");
+	CONFIG.people.removeClass("pgrid-expanded pgrid-item-active").addClass("pgrid-item-inactive").css("height", "auto");
 	CONFIG.expanders.hide().css("height", 0);
+	CONFIG.trueSelect = undefined;
 }
 
 function showCorrect($item) {
@@ -27,11 +28,8 @@ function setHeight($item) {
 	var heightNow = $item.find(".pgrid-teaser-wrap").outerHeight(true),
 		expHeight = $item.hasClass("pgrid-expanded") ? $item.find(".pgrid-expander").outerHeight(true) : 0;
 
-	console.log(heightNow, expHeight);
-
 	$item.css("height", heightNow + expHeight);
 }
-
 
 
 
@@ -40,15 +38,14 @@ function setHeight($item) {
 
 CONFIG.people.on({
 	mouseenter: function() {
-		CONFIG.people.removeClass("pgrid-item-active");
+		CONFIG.people.addClass("pgrid-item-inactive").removeClass("pgrid-item-active");
 		$(this).addClass("pgrid-item-active");
 	},
 	mouseleave: function() {
-		CONFIG.people.removeClass("pgrid-item-active");
-		CONFIG.trueSelect.addClass("pgrid-item-active");
-	},
-	click: function() {
-		CONFIG.trueSelect = $(this);
+		CONFIG.people.addClass("pgrid-item-inactive").removeClass("pgrid-item-active");
+		if (CONFIG.trueSelect) {
+			CONFIG.trueSelect.addClass("pgrid-item-active");
+		}
 	}
 });
 
@@ -59,7 +56,8 @@ CONFIG.teasers.on("click", function() {
 		resetOthers();
 	} else {
 		resetOthers();
-		$item.addClass("pgrid-expanded");
+		CONFIG.trueSelect = $item;
+		$item.addClass("pgrid-expanded").addClass("pgrid-item-active");
 		showCorrect($item);
 		setHeight($item);
 	}
